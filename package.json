@@ -1,0 +1,24 @@
+{
+  "name": "my-kanban",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.13",
+    "eslint-config-next": "13.4.12",
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
+    "uuid": "^9.0.0",
+    "zustand": "^4.3.9"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0"
+  }
+}

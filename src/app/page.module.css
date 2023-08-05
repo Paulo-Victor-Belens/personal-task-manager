@@ -1,0 +1,772 @@
+.layout {
+  display: flex;
+}
+
+.layoutMain {
+  width: var(--width-layout);
+}
+
+.hiddenLayoutMain {
+  width: 100vw;
+}
+
+/* HEADER */
+
+.btns_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+}
+
+.btns_header .btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.header {
+  align-items: center;
+  padding: 0 25px;
+  display: flex;
+  justify-content: space-between;
+  height: var(--heigth-header-and-aside);
+  box-shadow: 0px 0px 2px -1px black;
+}
+
+.btn {
+  text-transform: capitalize;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnPrimaryLight {
+  background-color: var(--color-light-primary);
+  color: var(--color-white-light);
+}
+
+.btnPrimaryLight:hover {
+  background-color: var(--color-light-primary-light);
+}
+
+.btnSecondaryLight {
+  background-color: rgba(99, 95, 199, 0.10);
+  color: var(--color-light-primary);
+}
+
+.btnSecondaryLight:hover {
+  background-color: rgba(98, 95, 199, 0.432);
+}
+
+.btn:disabled{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btnElli {
+  padding: 2px;
+}
+
+/* ASIDE */
+
+.logo, .hiddenLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--heigth-header-and-aside);
+}
+
+.hiddenLogo {
+  padding: 0 40px;
+}
+
+/* .asideContainer {
+  height: calc(100vh - (var(--heigth-header-and-aside) * 3));
+} */
+
+.hiddenAsideContainer {
+  height: fit-content;
+}
+
+.asideTitle, .asideContent {
+  color: var(--color-dark-secondary);
+}
+
+.asideBoards button {
+  color: var(--color-light-primary);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+}
+
+.asideContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: flex-start; */
+  width: var(--width-aside);
+  padding: 15px 25px;
+  height: calc( 100vh - var(--heigth-header-and-aside));
+}
+
+.hiddenAsideContent {
+  display: none;
+}
+
+.asideTitle {
+  margin-bottom: 25px;
+}
+
+.hideSidebar {
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px 0;
+}
+
+.hideSidebar > div {
+  width: 100%;
+}
+
+.buttonHideSidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  width: 100%;
+  justify-content: flex-start;
+  color: var(--color-dark-secondary);
+  font-size: var(--font-size-m);
+}
+
+.buttonHideSidebar > img {
+  margin-right: 5px;
+}
+
+/* .buttonHideSidebar > p:hover {
+  color: var(--color-light-primary);
+} */
+
+.boards {
+  margin-left: -30px;
+  padding-left: 30px;
+  overflow-y: auto;
+  max-height: calc(100vh - (var(--heigth-header-and-aside) * 4));
+}
+
+.boardBtn, .boardsActive {
+  padding: 15px 0;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  cursor: pointer;
+}
+
+.boardBtn:hover {
+  background-color: rgba(99, 95, 199, 0.10);
+  color: #635fc7;
+  margin-left: -30px;
+  padding-left: 30px;
+}
+
+.boardsActive {
+  margin-left: -30px;
+  padding-left: 30px;
+  background-color: var(--color-light-primary);
+  color: var(--color-white-light);
+}
+
+.btnCreateBoard {
+  padding: 15px 0;
+}
+
+.iconBoard {
+  margin-right: 15px;
+}
+
+
+.toogleContent {
+  align-items: center;
+  border-radius: 5px;
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 35px;
+  width: 100%;
+}
+
+/* Button toggle  */
+
+.flipswitch {
+  position: relative;
+  width: 50px;
+}
+.flipswitch input[type=checkbox] {
+  display: none;
+}
+.flipswitch_label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0px solid #FFFFFF;
+  border-radius: 15px;
+}
+.flipswitch_inner {
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.flipswitch_inner:before, .flipswitch_inner:after {
+  float: left;
+  width: 50%;
+  height: 25px;
+  padding: 0;
+  line-height: 25px;
+  font-size: 14px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.flipswitch_inner:before {
+  content: "";
+  display: block;
+  padding-left: 12px;
+  background-color: #635FC7;
+  color: #FFFFFF;
+}
+.flipswitch_inner:after {
+  content: "";
+  display: block;
+  padding-right: 12px;
+  background-color: #635FC7;
+  color: #888888;
+  text-align: right;
+}
+.flipswitch_switch {
+  width: 17px;
+  margin: 4px;
+  background: #FFFFFF;
+  border: 0px solid #FFFFFF;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 23px;
+  transition: all 0.2s ease-in 0s;
+}
+.flipswitch_cb:checked + .flipswitch_label .flipswitch_inner {
+  margin-left: 0;
+}
+.flipswitch_cb:checked + .flipswitch_label .flipswitch_switch {
+  right: 0;
+}
+
+
+/* MAIN */
+
+.main, .hiddenMain, .mainEmptyBoard {
+  background-color: var(--color-white);
+  height: calc(100vh - var(--heigth-header-and-aside));
+  display: flex;
+  /* justify-content: flex-start; */
+  align-content: flex-start;
+  box-shadow: 0px 0px 2px -1px black;
+  position: relative;
+  overflow-x: auto;
+  flex-flow: column wrap;
+}
+
+.mainEmptyBoard {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  align-content: initial;
+}
+
+.hiddenMain {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+}
+
+.emptyBoard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20vh;
+}
+
+.showBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background-color: var(--color-light-primary);
+  box-shadow: 0px 0px 2px -1px black;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+}
+
+.hideBtn {
+  display: none;
+}
+
+/* PASSOS PARA ESCONDER O ASIDE
+  1 - display: none; no asideContent
+  2 - height: fit-content; no aside
+  3 - padding: 0 40px; na logo
+  4 - width: 100%; no layoutMain
+  5 - margin-left: -17vw; no main
+*/
+
+.containerModal, .formAdd {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerModal {
+  padding: 15px;
+}
+
+.containerModal .btn {
+  margin-top: 20px;
+}
+
+.containerModal h3 {
+  margin-bottom: 10px;
+}
+
+/* .formAdd {
+  
+} */
+
+.input, .inputDark {
+  border: 1px solid rgba(130, 143, 163, 0.25);
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  margin: 10px 0;
+  font-weight: 600;
+
+}
+
+.input:focus, .inputDark:focus {
+  outline: none;
+  border: 1px solid var(--color-light-primary);
+}
+
+.inputDark {
+  background-color: var(--color-dark-primary-light);
+  color: var(--color-white);
+}
+
+.textarea {
+  resize: none;
+}
+
+
+.inputWithClose {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputWithClose .input, .inputWithClose .inputDark {
+  width: 90%;
+}
+
+.error {
+  color: var(--color-red);
+  font-size: var(--font-size-s);
+  margin: 5px 0;
+}
+
+.divElli {
+  position: relative;
+}
+
+/* modal editDeleteBox */
+.editDeleteBox {
+  position: absolute;
+  top: 50px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  z-index: 1;
+  min-width: 14vw;
+  background-color: var(--color-white-light);
+  border-radius: 8px;
+  box-shadow: 0px 0px 12px -8px var(--color-dark-primary);
+}
+
+.editDeleteBox button {
+  font-size: var(--font-size-m);
+  line-height: normal;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.editDeleteBox button:nth-child(1) {
+  color: var(--color-dark-secondary);
+  margin-bottom: 16px;
+}
+
+.editDeleteBox button:nth-child(1):hover {
+  color: var(--color-dark-primary-light);
+}
+
+.editDeleteBox button:nth-child(2) {
+  color: var(--color-red);
+}
+
+.editDeleteBox button:nth-child(2):hover {
+  color: var(--color-red-light);
+}
+
+/* MODAL DELETE */
+
+.modalDivDelete {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 15px;
+  width: 480px;
+  height: 229px;
+}
+
+.titleDelete {
+  color: var(--color-red);
+}
+
+.txtDelete {
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-l);
+  color: var(--color-dark-secondary);
+}
+
+.buttonsDelete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonsDelete button {
+  font-weight: 700;
+  width: 45%;
+}
+
+.buttonsDelete button:nth-child(1) {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.buttonsDelete button:nth-child(1):hover {
+  background-color: var(--color-red-light);
+}
+
+
+.divColumns {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleColumn {
+  font-family: Plus Jakarta Sans;
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 2.4px;
+  color: var(--color-dark-secondary);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.newColumn {
+  text-transform: capitalize;
+  background-color: rgb(224, 234, 255);
+  color: var(--color-dark-secondary);
+}
+.newColumn:hover {
+  color: var(--color-light-primary);
+}
+
+.divColumns, .newColumn {
+  width: 350px;
+  height: 100%;
+  margin: 25px;
+  border-radius: 8px;
+}
+
+.label {
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+  color: var(--color-dark-secondary);
+  margin-top: 5px;
+}
+
+.select {
+  background-image: url('../images/icon-chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 2% center ;
+  transition: all 0.3s ease-in-out;
+}
+
+.select:focus {
+  background-image: url('../images/icon-chevron-up.svg');
+  background-repeat: no-repeat;
+  background-position: right 2% center ;
+  transition: all 0.3s ease-in-out;
+}
+
+.divTask {
+  background-color: var(--color-white-light);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px -6px var(--color-dark-primary);
+  margin: 10px 0;
+  padding: 20px;
+}
+
+.divTask p {
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-m);
+  font-weight: 600;
+  color: var(--color-dark-secondary);
+}
+
+.divTask h3 {
+  margin-bottom: 10px;
+}
+
+.divTask:hover {
+  cursor: pointer;
+  color: var(--color-light-primary);
+}
+
+.conatinerInputCollumn {
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.randomColorAndTitle {
+  display: flex;
+  align-items: center;
+}
+
+.divRandomColor {
+  display: flex;
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  margin-bottom: 20px;
+  margin-right: 12px;
+}
+
+.headerModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-l);
+  font-weight: 500;
+  color: var(--color-dark-secondary);
+  margin-bottom: 10px;
+}
+
+.check, .checkDark {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 5px 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+.check {
+  background-color: var(--color-white);
+}
+
+.checkDark {
+  background-color: var(--color-dark-primary-light);
+}
+
+.check:hover {
+  background-color: #625fc752;
+}
+
+.checkDark:hover {
+  background-color: #625fc7a6;
+}
+
+.check input, .checkDark input {
+  margin-right: 16px;
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(130, 143, 163, 0.25);
+}
+
+.check input:checked, .checkDark input:checked {
+  background-color: var(--color-light-primary);
+}
+
+.check input:checked + span, .checkDark input:checked + span {
+  color: var(--color-dark-secondary);
+  text-decoration: line-through;
+}
+
+.check span, .checkDark span {
+  font-weight: 700;
+  font-size: var(--font-size-m);
+}
+
+
+/* DARK MODE */
+
+.isDarkMode {
+  background-color: var(--color-dark-primary-light);
+  color: var(--color-dark-secondary);
+}
+
+.isDarkMode .main, .isDarkMode .hiddenMain {
+  background-color: var(--color-dark-primary);
+  color: var(--color-white);
+}
+
+/* .isDarkMode .main button {
+  background: var(--color-dark-primary-light);
+  color: var(--color-white);
+} */
+
+.isDarkMode aside .toogleContent {
+  background-color: var(--color-dark-primary);
+}
+
+.mainEmptyBoardDarkMode {
+  background-color: var(--color-dark-primary);
+}
+
+.btnDarkMode {
+  background-color: var(--color-white);
+  color: var(--color-light-primary);
+}
+
+.containerModalDarkMode {
+  color: var(--color-white);
+}
+
+/* .containerModalDarkMode input {
+  background-color: var(--color-dark-primary-light);
+  margin-right: 16px;
+  margin-top: 3px;
+  width: 100%;
+  height: 16px;
+  border: 1px solid rgba(130, 143, 163, 0.25);
+}
+
+
+.containerModalDarkMode input:checked {
+  background-color: var(--color-dark-primary);
+}
+
+.containerModalDarkMode input:checked + span {
+  color: var(--color-light-primary);
+  text-decoration: line-through;
+}
+
+.containerModalDarkMode span {
+  font-weight: 700;
+  font-size: var(--font-size-m);
+}
+*/
+.editDeleteBoxDarkMode {
+  background-color: var(--color-dark-primary);
+}
+
+
+
+.divTaskDarkMode {
+  background-color: var(--color-dark-primary-light);
+}
+/* SCROLL BAR */
+
+/* Estilos para a barra de rolagem dentro da classe .darkMode */
+.layout ::-webkit-scrollbar {
+  height: 8px;
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estilo do botão na barra de rolagem (para clicar e arrastar) */
+.layout ::-webkit-scrollbar-thumb {
+  background-color: var(--color-light-primary); /* Cor do botão */
+  border-radius: 4px; /* Borda arredondada do botão */
+}
+
+/* Estilo de fundo da barra de rolagem (área onde o botão se move) */
+.layout ::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor de fundo */
+  cursor: pointer;
+}
+
+/* Estilo do botão na barra de rolagem quando está sendo clicado ou arrastado */
+.layout ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-dark-primary-light); /* Cor do botão quando hover */
+}
+
+/* Estilo do botão na barra de rolagem quando está no começo ou no final do conteúdo */
+.layout ::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--color-light-primary); /* Cor do botão quando no começo ou no final do conteúdo */
+}
+
+/* Estilo de fundo da barra de rolagem quando está no começo ou no final do conteúdo */
+.layout ::-webkit-scrollbar-track:vertical {
+  background-color: #f1f1f1; /* Cor de fundo quando no começo ou no final do conteúdo */
+}
+
+/* SCROLL BAR OF MODAL */
+
+/* Estilos para a barra de rolagem dentro da classe .darkMode */
+.conatinerInputCollumn::-webkit-scrollbar {
+  height: 8px;
+  width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estilo do botão na barra de rolagem (para clicar e arrastar) */
+.conatinerInputCollumn::-webkit-scrollbar-thumb {
+  background-color: var(--color-light-primary); /* Cor do botão */
+  border-radius: 4px; /* Borda arredondada do botão */
+}
+
+/* Estilo de fundo da barra de rolagem (área onde o botão se move) */
+.conatinerInputCollumn::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Cor de fundo */
+  cursor: pointer;
+}
+
+/* Estilo do botão na barra de rolagem quando está sendo clicado ou arrastado */
+.conatinerInputCollumn::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-dark-primary-light); /* Cor do botão quando hover */
+}
+
+/* Estilo do botão na barra de rolagem quando está no começo ou no final do conteúdo */
+.conatinerInputCollumn::-webkit-scrollbar-thumb:vertical {
+  background-color: var(--color-light-primary); /* Cor do botão quando no começo ou no final do conteúdo */
+}
+
+/* Estilo de fundo da barra de rolagem quando está no começo ou no final do conteúdo */
+.conatinerInputCollumn ::-webkit-scrollbar-track:vertical {
+  background-color: #f1f1f1; /* Cor de fundo quando no começo ou no final do conteúdo */
+}
