@@ -207,7 +207,7 @@ export default function ModalTask({ openModal, closeModal, title, description, s
                 <option
                   key={index}
                   value={column.id}
-                >tasks
+                >
                   {column.name}
                 </option>
               ))}
