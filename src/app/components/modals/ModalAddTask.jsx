@@ -67,12 +67,13 @@ function ModalAddTask({ titleModal, boardLocal }) {
     });
 
     const colunmByName = actualBoards.columns.filter((column) => column.id === tasksStatus);
+    const subTaskNotEmpity = subTasks.filter((subtask) => subtask.name !== '');
 
     const tasks = {
       id: uuidv4(),
       title: taskTitle,
       description: tasksDescription,
-      subtasks: subTasks,
+      subtasks: subTaskNotEmpity,
       status: colunmByName[0].name,
     };
 
