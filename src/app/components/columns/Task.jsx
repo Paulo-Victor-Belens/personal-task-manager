@@ -17,7 +17,7 @@ export default function Task({id, title, subtasks, description, columns}) {
     <div>
       <div onClick={toggleTask} className={isDarkMode ? `${styles.divTask} ${styles.divTaskDarkMode}` : styles.divTask}>
         <h3>{title}</h3>
-        <p>{`${checkActive} of ${subtasks[0].name.length !== 0 ? subtasks.length : 0 } subtasks`}</p>
+        <p>{`${checkActive} of ${subtasks[0] && subtasks[0].name.length !== 0 ? subtasks.length : 0 } subtasks`}</p>
       </div>
         <ModalTask
           openModal={isTaskOpen}
