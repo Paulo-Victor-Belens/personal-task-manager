@@ -14,7 +14,7 @@
   --color-light-secondary-light: #20212c;
 
   /* Dark mode */
-  --color-dark-primary: rgb(43, 44, 55);
+  --color-dark-primary: #2b2c37;
   --color-dark-primary-light: #3e3f4e;
   --color-dark-secondary: #828fa3;
   --color-dark-secondary-light: rgb(228, 235, 250);
@@ -87,4 +87,29 @@ label {
   font-size: var(--font-size-s);
   line-height: var(--line-height-s);
   font-weight: 700;
+}
+
+@media (min-width: 850px) and (max-width: 991px) {
+  :root {
+    --width-layout: 70vw;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 849px) {
+  :root {
+    --width-layout: 65vw;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 699px) {
+  :root {
+    --width-layout: 60vw;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --width-layout: 100vw;
+    --heigth-header-and-aside: 10vh;
+  }
 }

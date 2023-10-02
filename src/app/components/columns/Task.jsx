@@ -10,7 +10,6 @@ export default function Task({id, title, subtasks, description, columns}) {
   const toggleTask = () => {
     setIsTaskOpen(!isTaskOpen);
   };
-
   const columnByTask = columns.find((column) => column.tasks
     .find((task) => task.id === id));
   return (

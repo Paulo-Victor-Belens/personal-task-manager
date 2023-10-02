@@ -5,22 +5,9 @@ import useStore from '@/zustand/store';
 import { customStyles } from './customStyles';
 
 export default function ModalDelete({boardOrTask , modalDeleteBoard, showDeleteBox, deleteFunction, children}) {
-  const [isDarkMode] = useStore((state) => [state.isDarkMode])
-  // const customStyles = {
-  //   content: {
-  //     top: '50%',
-  //     left: '50%',
-  //     right: 'auto',
-  //     bottom: 'auto',
-  //     marginRight: '-50%',
-  //     transform: 'translate(-50%, -50%)',
-  //     transition: 'all 0.4s ease-in-out',
-  //     backgroundColor: isDarkMode ? "#2B2C37" : "#fff",
-  //   },
-  // };
+  const [isDarkMode] = useStore((state) => [state.isDarkMode]);
   
   let custom = customStyles(isDarkMode);
-  custom.content.width = '';
   return (
     <Modal
         isOpen={modalDeleteBoard}
